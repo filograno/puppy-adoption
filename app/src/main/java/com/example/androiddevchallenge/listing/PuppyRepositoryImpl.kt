@@ -1,5 +1,6 @@
 package com.example.androiddevchallenge.listing
 
+import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.model.Puppy
 import com.example.androiddevchallenge.model.Sex
 
@@ -9,6 +10,7 @@ class PuppyRepositoryImpl : PuppyRepository {
         listOf(
             Puppy(
                 "Nora",
+                R.drawable.nora,
                 Sex.FEMALE,
                 "Corgi",
                 2,
@@ -17,6 +19,7 @@ class PuppyRepositoryImpl : PuppyRepository {
             ),
             Puppy(
                 "Noble",
+                R.drawable.noble,
                 Sex.MALE,
                 "Jack Russell terrier",
                 3,
@@ -25,6 +28,7 @@ class PuppyRepositoryImpl : PuppyRepository {
             ),
             Puppy(
                 "George",
+                R.drawable.george,
                 Sex.MALE,
                 "Beagle",
                 5,
@@ -33,6 +37,7 @@ class PuppyRepositoryImpl : PuppyRepository {
             ),
             Puppy(
                 "Matty",
+                R.drawable.matty,
                 Sex.FEMALE,
                 "French Bulldog",
                 8,
