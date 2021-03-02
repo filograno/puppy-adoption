@@ -46,13 +46,15 @@ fun PuppyItem(puppy: Puppy) {
     Column(
         modifier = Modifier
             .clickable { }
-            .border(width = 1.dp, color = Color.Gray)
+            .border(width = 1.dp, color = Color.Gray, shape = RoundedCornerShape(15.dp))
+            .clip(shape = RoundedCornerShape(15.dp))
             .fillMaxWidth(),
     ) {
         Image(
-            painter = painterResource(id = R.drawable.ic_launcher_background),
+            painter = painterResource(id = puppy.image),
             contentDescription = null,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.height(180.dp).fillMaxWidth(),
+            contentScale = ContentScale.Crop
         )
         Row(
             verticalAlignment = Alignment.CenterVertically,
