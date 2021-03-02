@@ -26,9 +26,11 @@ fun MyApp(puppies: List<Puppy>) {
             Column(
                 Modifier
                     .padding(16.dp)
-                    .fillMaxWidth()) {
+                    .fillMaxWidth()
+            ) {
                 puppies.forEach { puppy ->
                     PuppyItem(puppy)
+                    Spacer(modifier = Modifier.height(8.dp))
                 }
             }
         }
@@ -41,7 +43,6 @@ fun PuppyItem(puppy: Puppy) {
         modifier = Modifier
             .clickable { }
             .border(width = 1.dp, color = Color.Gray)
-            .padding(vertical = 16.dp)
             .fillMaxWidth(),
     ) {
         Image(
@@ -49,14 +50,21 @@ fun PuppyItem(puppy: Puppy) {
             contentDescription = null,
             modifier = Modifier.fillMaxWidth()
         )
-        Spacer(modifier = Modifier.height(8.dp))
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.padding(horizontal = 8.dp)
+        ) {
             Text(text = puppy.name, style = typography.h5)
             Spacer(modifier = Modifier.width(32.dp))
             Text(text = puppy.sex.name, style = typography.body2)
         }
         Spacer(modifier = Modifier.height(8.dp))
-        Text(text = puppy.breed, style = typography.body2)
+        Text(
+            modifier = Modifier.padding(horizontal = 8.dp),
+            text = puppy.breed,
+            style = typography.body2
+        )
+        Spacer(modifier = Modifier.height(8.dp))
     }
 }
 
