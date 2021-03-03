@@ -26,7 +26,7 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.typography
 
 @Composable
-fun MyApp(puppies: List<Puppy>, onClick: (() -> Unit)?) {
+fun MyApp(puppies: List<Puppy>, onClick: ((Int) -> Unit)?) {
     MaterialTheme {
         Surface(color = MaterialTheme.colors.background) {
             LazyColumn(
@@ -44,10 +44,10 @@ fun MyApp(puppies: List<Puppy>, onClick: (() -> Unit)?) {
 }
 
 @Composable
-fun PuppyItem(puppy: Puppy, onClick: (() -> Unit)?) {
+fun PuppyItem(puppy: Puppy, onClick: ((Int) -> Unit)?) {
     Column(
         modifier = Modifier
-            .clickable { onClick?.invoke() }
+            .clickable { onClick?.invoke(puppy.id) }
             .border(width = 1.dp, color = Color.Gray, shape = RoundedCornerShape(15.dp))
             .clip(shape = RoundedCornerShape(15.dp))
             .fillMaxWidth(),

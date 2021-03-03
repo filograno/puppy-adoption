@@ -33,7 +33,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp(mainPresenter.getPuppies()) { router.openDetail(this) }
+                MyApp(mainPresenter.getPuppies()) { puppyId ->
+                    router.openDetail(this, puppyId)
+                }
             }
         }
     }
