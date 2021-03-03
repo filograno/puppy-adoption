@@ -1,9 +1,12 @@
 package com.example.androiddevchallenge.detail
 
 import android.os.Bundle
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
+import com.example.androiddevchallenge.listing.MyApp
 import com.example.androiddevchallenge.listing.PuppyRepository
 import com.example.androiddevchallenge.listing.PuppyRepositoryImpl
+import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class DetailActivity : AppCompatActivity() {
 
@@ -14,6 +17,11 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         puppyId = intent.extras?.getInt(PUPPY_ID_KEY)
         val puppy = repository.fetchPuppy(puppyId!!)
+        setContent {
+            MyTheme {
+                Detail(puppy)
+            }
+        }
     }
 
     companion object {
