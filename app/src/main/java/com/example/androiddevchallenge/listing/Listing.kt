@@ -19,7 +19,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.model.Puppy
+import com.example.androiddevchallenge.model.Sex
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.typography
 
@@ -53,24 +55,31 @@ fun PuppyItem(puppy: Puppy) {
         Image(
             painter = painterResource(id = puppy.image),
             contentDescription = null,
-            modifier = Modifier.height(180.dp).fillMaxWidth(),
+            modifier = Modifier
+                .height(180.dp)
+                .fillMaxWidth(),
             contentScale = ContentScale.Crop
         )
+        Spacer(modifier = Modifier.height(8.dp))
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(horizontal = 8.dp)
         ) {
             Text(text = puppy.name, style = typography.h5)
             Spacer(modifier = Modifier.width(32.dp))
-            Text(text = puppy.sex.name, style = typography.body2)
+            val sexImage = when (puppy.sex) {
+                Sex.MALE -> R.drawable.ic_male
+                Sex.FEMALE -> R.drawable.ic_female
+            }
+            Image(painter = painterResource(id = sexImage), contentDescription = null)
         }
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         Text(
             modifier = Modifier.padding(horizontal = 8.dp),
             text = puppy.breed,
             style = typography.body2
         )
-        Spacer(modifier = Modifier.height(8.dp))
+        Spacer(modifier = Modifier.height(16.dp))
     }
 }
 
