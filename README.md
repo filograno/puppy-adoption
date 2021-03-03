@@ -11,7 +11,9 @@ Puppy Adoption is an app built for the Android Dev Challenge about Compose.
 
 ## :bulb: Motivation and Context
 This app was written in four hours of work without any previous knowledge about Compose.
-The main information came from this introductory [tutorial](https://developer.android.com/jetpack/compose/tutorial).
+
+The main information come from this introductory [tutorial](https://developer.android.com/jetpack/compose/tutorial).
+
 A part of the UI come from this [design](https://www.uplabs.com/posts/pet-adoption-app-play-the-prototype-on-uigiants-com).
 
 
