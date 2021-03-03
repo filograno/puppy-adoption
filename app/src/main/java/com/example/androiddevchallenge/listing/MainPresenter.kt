@@ -21,7 +21,7 @@ interface MainPresenter {
     fun getPuppies(): List<Puppy>
 }
 
-class MainPresenterImpl: MainPresenter {
+class MainPresenterImpl : MainPresenter {
 
     private val repository: PuppyRepository = PuppyRepositoryImpl()
 
