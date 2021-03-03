@@ -69,7 +69,7 @@ fun DetailInfo(puppy: Puppy) {
         Spacer(modifier = Modifier.height(8.dp))
         Text(text = puppy.description, style = typography.body1)
         Spacer(modifier = Modifier.height(32.dp))
-        Button(onClick = {  }) {
+        Button(onClick = { }) {
             Text(text = "Adopt me!")
         }
     }
