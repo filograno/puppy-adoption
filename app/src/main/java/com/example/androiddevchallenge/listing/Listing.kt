@@ -71,7 +71,7 @@ fun PuppyItem(puppy: Puppy, onClick: ((Int) -> Unit)?) {
             .clickable { onClick?.invoke(puppy.id) }
             .border(width = 1.dp, color = Color.Gray, shape = RoundedCornerShape(15.dp))
             .clip(shape = RoundedCornerShape(15.dp))
-            .fillMaxWidth(),
+            .fillMaxWidth()
     ) {
         Image(
             painter = painterResource(id = puppy.image),
@@ -119,5 +119,3 @@ fun DarkPreview() {
         MyApp(PuppyRepositoryImpl().fetchPuppies(), null)
     }
 }
-
-
