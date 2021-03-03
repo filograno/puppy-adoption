@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -52,6 +53,10 @@ fun DetailInfo(puppy: Puppy) {
         Text(text = "📍 ${puppy.address}", style = typography.body2, color = Color.Gray)
         Spacer(modifier = Modifier.height(8.dp))
         Text(text = puppy.description, style = typography.body1)
+        Spacer(modifier = Modifier.height(32.dp))
+        Button(onClick = {  }) {
+            Text(text = "Adopt me!")
+        }
     }
 }
 
