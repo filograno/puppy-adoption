@@ -9,6 +9,7 @@ class PuppyRepositoryImpl : PuppyRepository {
     override fun fetchPuppies(): List<Puppy> =
         listOf(
             Puppy(
+                1,
                 "Nora",
                 R.drawable.nora,
                 Sex.FEMALE,
@@ -18,6 +19,7 @@ class PuppyRepositoryImpl : PuppyRepository {
                 "The Nora is a bright, sensitive dog who enjoys play with his human family and responds well to training. As herders bred to move cattle, they are fearless and independent. They are vigilant watchdogs, with acute senses and a “big dog” bark. Families who can meet their bold but kindly Pembroke’s need for activity and togetherness will never have a more loyal, loving pet."
             ),
             Puppy(
+                2,
                 "Noble",
                 R.drawable.noble,
                 Sex.MALE,
@@ -27,6 +29,7 @@ class PuppyRepositoryImpl : PuppyRepository {
                 "The Noble is a bright, sensitive dog who enjoys play with his human family and responds well to training. As herders bred to move cattle, they are fearless and independent. They are vigilant watchdogs, with acute senses and a “big dog” bark. Families who can meet their bold but kindly Pembroke’s need for activity and togetherness will never have a more loyal, loving pet."
             ),
             Puppy(
+                3,
                 "George",
                 R.drawable.george,
                 Sex.MALE,
@@ -36,6 +39,7 @@ class PuppyRepositoryImpl : PuppyRepository {
                 "The George is a bright, sensitive dog who enjoys play with his human family and responds well to training. As herders bred to move cattle, they are fearless and independent. They are vigilant watchdogs, with acute senses and a “big dog” bark. Families who can meet their bold but kindly Pembroke’s need for activity and togetherness will never have a more loyal, loving pet."
             ),
             Puppy(
+                4,
                 "Matty",
                 R.drawable.matty,
                 Sex.FEMALE,
