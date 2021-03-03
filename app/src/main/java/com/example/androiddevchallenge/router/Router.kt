@@ -23,7 +23,7 @@ interface Router {
     fun openDetail(context: Context, puppyId: Int)
 }
 
-class RouterImpl: Router {
+class RouterImpl : Router {
     override fun openDetail(context: Context, puppyId: Int) {
         val intent = Intent(context, DetailActivity::class.java)
         intent.putExtra(DetailActivity.PUPPY_ID_KEY, puppyId)
