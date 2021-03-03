@@ -20,17 +20,20 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import com.example.androiddevchallenge.MainPresenter
 import com.example.androiddevchallenge.MainPresenterImpl
+import com.example.androiddevchallenge.router.Router
+import com.example.androiddevchallenge.router.RouterImpl
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
 
     private val mainPresenter: MainPresenter = MainPresenterImpl()
+    private val router: Router = RouterImpl()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp(mainPresenter.getPuppies())
+                MyApp(mainPresenter.getPuppies()) { router.openDetail(this) }
             }
         }
     }

@@ -26,7 +26,7 @@ import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.typography
 
 @Composable
-fun MyApp(puppies: List<Puppy>) {
+fun MyApp(puppies: List<Puppy>, onClick: (() -> Unit)?) {
     MaterialTheme {
         Surface(color = MaterialTheme.colors.background) {
             LazyColumn(
@@ -35,7 +35,7 @@ fun MyApp(puppies: List<Puppy>) {
                     .fillMaxWidth()
             ) {
                 items(puppies) { puppy ->
-                    PuppyItem(puppy)
+                    PuppyItem(puppy, onClick)
                     Spacer(modifier = Modifier.height(8.dp))
                 }
             }
@@ -44,10 +44,10 @@ fun MyApp(puppies: List<Puppy>) {
 }
 
 @Composable
-fun PuppyItem(puppy: Puppy) {
+fun PuppyItem(puppy: Puppy, onClick: (() -> Unit)?) {
     Column(
         modifier = Modifier
-            .clickable { }
+            .clickable { onClick?.invoke() }
             .border(width = 1.dp, color = Color.Gray, shape = RoundedCornerShape(15.dp))
             .clip(shape = RoundedCornerShape(15.dp))
             .fillMaxWidth(),
@@ -87,7 +87,7 @@ fun PuppyItem(puppy: Puppy) {
 @Composable
 fun LightPreview() {
     MyTheme {
-        MyApp(PuppyRepositoryImpl().fetchPuppies())
+        MyApp(PuppyRepositoryImpl().fetchPuppies(), null)
     }
 }
 
@@ -95,7 +95,7 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        MyApp(PuppyRepositoryImpl().fetchPuppies())
+        MyApp(PuppyRepositoryImpl().fetchPuppies(), null)
     }
 }
 
