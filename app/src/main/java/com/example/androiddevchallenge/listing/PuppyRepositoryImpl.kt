@@ -49,4 +49,7 @@ class PuppyRepositoryImpl : PuppyRepository {
                 "The Matty is a bright, sensitive dog who enjoys play with his human family and responds well to training. As herders bred to move cattle, they are fearless and independent. They are vigilant watchdogs, with acute senses and a “big dog” bark. Families who can meet their bold but kindly Pembroke’s need for activity and togetherness will never have a more loyal, loving pet."
             )
         )
+
+    override fun fetchPuppy(id: Int): Puppy =
+        fetchPuppies().first { it.id == id }
 }
